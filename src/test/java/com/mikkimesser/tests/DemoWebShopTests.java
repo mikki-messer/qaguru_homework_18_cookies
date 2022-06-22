@@ -2,6 +2,7 @@ package com.mikkimesser.tests;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.restassured.AllureRestAssured;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
@@ -34,7 +35,8 @@ public class DemoWebShopTests extends TestBase{
     String authCookieName = "NOPCOMMERCE.AUTH";
 
     @Test
-    @DisplayName("Successful authorization to some demowebshop (API + UI)")
+    @Disabled
+    @DisplayName("Successful authorization to some demowebshop (API + UI) with allure listener")
     void loginWithApiAndAllureListenerTest() {
         step("Get cookie by api and set it to browser", () -> {
             String authCookieValue = given()
@@ -65,7 +67,7 @@ public class DemoWebShopTests extends TestBase{
     }
 
     @Test
-    @DisplayName("Successful authorization to some demowebshop (API + UI)")
+    @DisplayName("Successful authorization to some demowebshop (API + UI) with custom listener")
     void loginWithApiAndCustomListenerTest() {
         step("Get cookie by api and set it to browser", () -> {
             String authCookieValue = given()
