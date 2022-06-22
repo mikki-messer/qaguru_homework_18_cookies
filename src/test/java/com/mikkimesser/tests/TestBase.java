@@ -74,8 +74,7 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
 
-        if (Configuration.remote != null)
-            Attach.addVideo();
+        Attach.addVideo(Configuration.remote);
 
         closeWebDriver();
     }
